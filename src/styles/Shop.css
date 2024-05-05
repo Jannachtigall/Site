@@ -1,0 +1,433 @@
+/* 
+    Page header start
+*/
+
+.page-header-container {
+    text-align: center;
+}
+
+.page-header-title {
+    font-size: 54px;
+    line-height: 76px;
+    font-weight: 300;
+    color: #8E6FE9;
+    font-family: 'Montserrat';
+}
+
+/* 
+    Page header start
+*/
+
+/* 
+    TypeItem styles start
+*/
+
+.type-card {
+  height: 312px;
+  max-width: 29%;
+  cursor: pointer;
+}
+
+.type-card-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  color: #7F49DD;
+  text-align: center;
+  width: 350px;
+}
+
+.type-card-img {
+  border: 1px solid #0000005c ;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: .15s all;
+  min-width: 355px;
+  max-height: 262px;
+}
+
+.type-card-img:hover {
+  transform: scale(1.05);
+}
+
+/* 
+    TypeItem styles end
+*/
+
+/* 
+    Button styles start
+*/
+
+.floating-button-container {
+  position: fixed;
+  bottom: 20px; /* Регулируйте отступ от нижнего края */
+  right: 20px; /* Регулируйте отступ от правого края */
+}
+
+.floating-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%; /* Делает кнопку круглой */
+  background-color: #ffffff; /* Цвет кнопки */
+  color: white; /* Цвет текста на кнопке */
+  font-size: 24px; /* Размер шрифта */
+  border: none; /* Удаляем границу */
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Добавляем тень */
+  outline: none; /* Удаляем контур */
+}
+
+/* 
+    Button styles end
+*/
+
+/* 
+    Item card styles start
+ */
+
+.item-card {
+  max-width: 290px;
+  max-height: 250px;
+  position: relative;
+  overflow: hidden; /* Обрезаем содержимое, выходящее за пределы контейнера */
+  cursor: pointer;
+}
+
+.item-card::after {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(21, 24, 36, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: 0; /* Прижимаем блок к нижней границе контейнера */
+  left: 0; /* Выравниваем блок по левому краю контейнера */
+  width: 100%; /* Ширина блока равна ширине контейнера */
+  padding: 10px; /* Добавляем отступы */
+  color: white; /* Устанавливаем цвет текста */
+  z-index: 1;
+
+  display: flex;
+  justify-content: space-between; /* Распределение между элементами */
+  flex-direction: column; /* Определяем направление колонок */
+}
+
+.text-block {
+  padding: 5px;
+  flex: 2
+}
+
+.item-text {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  color: rgb(255, 255, 255);
+}
+
+.card-img {
+  width: 290px;
+  height: 250px;
+  object-fit: cover;
+  transition: .15s all;
+}
+
+.item-card:hover .card-img {
+  transform: scale(1.05);
+}
+
+.button-block {
+  text-align: end;
+}
+
+.pocket-button {
+  flex: 1;
+  max-width: 46px;
+  max-height: 46px;
+  border-radius: 50%;
+  background-color: #ffffff; /* Цвет кнопки */
+  color: white; /* Цвет текста на кнопке */
+  font-size: 24px; /* Размер шрифта */
+  border: none; /* Удаляем границу */
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Добавляем тень */
+  outline: none; /* Удаляем контур */
+}
+
+/*
+    Item card styles end
+ */
+
+/* 
+    Basket styles start
+*/
+
+.menu {
+  position: fixed;
+  width: 100dvw;
+  height: 100dvh;
+  top: 116px;
+  right: 0;
+  transform: translateX(200%);
+  transition: all 0.3s;
+  z-index: 2;
+}
+
+.menu.active {
+  transform: translateX(64%);
+}
+
+.blur {
+  width: 100dvw;
+  height: 100dvh;
+  backdrop-filter: blur(2px);
+  right: 100%;
+  position: absolute;
+}
+
+.menu__content {
+  width: 36%;
+  height: 100%;
+  background-color: white;
+  transition: all 0.3s;
+  border-left: 1px solid black;
+}
+
+.menu__header {
+  padding-top: 26px;
+  padding-inline: 26px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.closeButton {
+  background-color: #ffffff; /* Цвет кнопки */
+  color: white; /* Цвет текста на кнопке */
+  font-size: 24px; /* Размер шрифта */
+  border: none; /* Удаляем границу */
+  cursor: pointer;
+  outline: none; /* Удаляем контур */
+}
+
+@media (max-width: 992px) {
+  .menu__content {
+    width: 100%;
+  }
+
+  .menu.active {
+    transform: translateX(0);
+  }  
+}
+
+
+/* 
+    Basket styles end
+*/
+
+/* 
+    Basket item style start
+*/
+
+.basket-item {
+  display: flex;
+  margin-block: 38px;
+  width: 100%;
+}
+
+.basket-item-panel {
+  padding-inline: 30px;
+}
+
+.basket-item-panel-header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.basket-item-title {
+  font-weight: 400; 
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 0;
+  flex: 4;
+  width: 230px;
+}
+
+.basket-item-delete-button {
+  background-color: #ffffff; /* Цвет кнопки */
+  color: white; /* Цвет текста на кнопке */
+  font-size: 24px; /* Размер шрифта */
+  border: none; /* Удаляем границу */
+  cursor: pointer;
+  outline: none; /* Удаляем контур */
+  flex: 1;
+}
+
+.basket-item-delete-button-img {
+  height: 30px;
+  width: 30px;
+}
+
+.basket-item-img {
+  height: 86px;
+  width: 125px;
+  object-fit: cover;
+}
+
+.basket-item-panel-footer {
+  display: flex;
+  align-items: center;
+}
+
+.basket-item-buttons {
+  display: flex;
+  align-items: center;
+  margin-right: 50px;
+}
+
+.round-button {
+  width: 17px;
+  height: 17px;
+  font-size: 12px; /* Уменьшите размер шрифта для соответствия */
+  line-height: 17px; /* Установите высоту строки равной высоте кнопки */
+  border-radius: 50%;
+  background-color: blue;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.number {
+  font-size: 14px;
+  margin: 0 16px;
+}
+
+
+.item-cost {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+}
+
+/* 
+    Basket item style end
+*/
+
+/* Payment style start */
+
+.payment {
+  padding-inline: 26px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.paymentButton {
+  background-color: white;
+  border: 1px solid black;
+  padding: 10px;
+  gap: 10px;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 33px;
+  color: black;
+  text-decoration: none;
+}
+
+.paymentTitle {
+  font-size: 25px;
+  line-height: 50px;
+  font-weight: 400;
+}
+
+/* Payment style end */
+
+/* Item modal style start */
+
+.modal {
+  height: 100dvh;
+  width: 100dvw;
+  backdrop-filter: blur(2px);
+  position: fixed;
+  top: 116px;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.modal.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal__content {
+  margin-top: 80px;
+  box-shadow: 0 0 10px rgba( 0, 0, 0, .2 );
+  border-radius: 12px;
+  background-color: white;
+  height: 300px;
+  width: 60vw;
+  transform: scale(0.3);
+  transition: 0.4s all;
+  display: flex;
+}
+
+.modal__content.active{
+  transform: scale(1);
+}
+
+.modal__left {
+  width: 50%;
+}
+
+.modal__image {
+  width: 100%;
+  border-radius: 9px 0 0 9px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal__right {
+  width: 50%;
+  padding-left: 20px;
+  padding: 5px;
+  padding-inline: 15px;
+}
+
+.modal-item-text {
+  height: 80%;
+}
+
+.modal-item-title {
+  display: flex;
+  align-items: top;
+  justify-content: space-between;
+}
+
+.modal__title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #8E6FE9;
+  font-weight: 300;
+  line-height: 40px;
+}
+
+.modal__price {
+  font-size: 18px;
+}
+
+.modal__description {
+  font-size: 12px;
+}
+
+/* Item modal style end */

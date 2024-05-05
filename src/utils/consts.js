@@ -1,0 +1,6 @@
+export const ADMIN_ROUTE = '/admin'
+export const LOGIN_ROUTE = '/login'
+export const SHOP_ROUTE = '/shop'
+export const ITEM_ROUTE = '/item'
+export const MAIN_ROUTE = '/'
+export const PAY_ROUTE = '/paypage'

@@ -1,0 +1,56 @@
+.login-container {
+    background-color: #7F49DD; /* Замените 'your-background-image.jpg' на путь к вашей картинке */
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form {
+    background-color: #ffffff; /* Основной цвет фона формы */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.login-form h2 {
+    text-align: center;
+    color: #A690E7; /* Цвет заголовка */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+
+    color: #A690E7; /* Цвет текста метки */
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    color: #A690E7;
+}
+
+.submitButton {
+    width: 100%;
+    padding: 10px;
+    background-color: #A690E7; /* Цвет кнопки */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submitButton:hover {
+    background-color: #7F49DD; /* Измененный цвет кнопки при наведении */
+}
