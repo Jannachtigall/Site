@@ -14,11 +14,11 @@ const NavBar = observer(() => {
             <Navbar collapseOnSelect expand="lg" className="bg-custom">
                 <Container>
                     {user.isAuth ? 
-                        <Navbar.Brand class="navbar-brand" href={MAIN_ROUTE}>
+                        <Navbar.Brand className="navbar-brand" href={MAIN_ROUTE}>
                             <img src={require("../img/png/Vector.png")} alt=""/>
                         </Navbar.Brand>
                         :
-                        <Navbar.Brand class="navbar-brand" href={ADMIN_ROUTE}>
+                        <Navbar.Brand className="navbar-brand" href={ADMIN_ROUTE}>
                             <img src={require("../img/png/Vector.png")} alt=""/>
                         </Navbar.Brand>
                     }

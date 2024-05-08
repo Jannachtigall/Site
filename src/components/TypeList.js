@@ -9,8 +9,8 @@ const TypeList = observer(() => {
 
     return (
         <Row className="justify-content-md-center">
-            {item.types.map(type => 
-                <Type type={type}/>
+            {item.types.map((type, index) => 
+                <Type type={type} key={index}/>
             )}
         </Row>
     );

@@ -16,6 +16,13 @@
     src: url('fonts/raleway-v29-cyrillic_latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
+* {
+    margin: 0;
+    /* padding: 0; */
+    box-sizing: border-box;
+    list-style-type: none;
+}
+
 body {
     font-family: 'Montserrat', serif;
     font-style: normal;

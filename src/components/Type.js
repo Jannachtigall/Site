@@ -8,7 +8,7 @@ export const Type = ({type}) => {
         <div className='type-card'>
             <h3 className='type-card-title'>{type.name}</h3>
             <img src={require(`../img/png/types/t${type.id}.png`)} 
-            alt='pomogi Gospodi'
+            alt='Type'
             className='type-card-img'/>
         </div>
     </Col>

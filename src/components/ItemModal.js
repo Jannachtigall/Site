@@ -1,9 +1,14 @@
 import React from 'react'
 import "../styles/Shop.css"
+import { useContext } from 'react'
+import { Context } from '..'
 
 export const ItemModal = ({active, setActive, item}) => {
+
+    const {basket} = useContext(Context)
+
     if (!item) {
-        return null; // Возвращаем null, если item не определен
+        return null;
     }
     
     return (
@@ -32,7 +37,7 @@ export const ItemModal = ({active, setActive, item}) => {
                         <p className="modal__description">{item.desc}</p>
                     </div>
                     <div style={{'textAlign': 'right'}}>
-                        <button className='pocket-button' style={
+                        <button className='pocket-button'  onClick={() => { basket.addItem(item); setActive(false) }} style={
                             {width: 60, height: 60}}>
                             <img src={require('../img/png/shopping-bag.png')}
                             alt='shopping'></img>

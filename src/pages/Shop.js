@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import {Context} from "../index"
 import { Container } from "react-bootstrap";
 import PageHeader from "../components/PageHeader";
 import "../styles/Shop.css"
@@ -7,10 +8,13 @@ import BasketButton from "../components/BasketButton";
 import { ItemList } from "../components/ItemList";
 import { Basket } from "../components/Basket";
 import { ItemModal } from "../components/ItemModal";
+import { OrderModal } from "../components/OrderModal";
 
 const Shop = () => {
+    const {basket} = useContext(Context)
     const [menuActive, setMenuActive] = useState(false)
     const [itemModalActive, setItemModalActive] = useState(false)
+    const [orderModalActive, setOrderModalActive] = useState(false)
     const [selectedItem, setSelectedItem] = useState(null);
 
     return (
@@ -19,14 +23,40 @@ const Shop = () => {
             title={"Натуральная продукция от лавандовой фермы"}
             margintop={144}
             marginbottom={77}/>
+
             <TypeList/>
+
             <PageHeader title={"Популярные товары"}
             margintop={62}
             marginbottom={46}/>
-            <ItemList setItemModalActive={setItemModalActive} setSelectedItem={setSelectedItem} />
-            <BasketButton active={menuActive} setActive={setMenuActive}/>
-            <Basket active={menuActive} setActive={setMenuActive}/>
-            <ItemModal active={itemModalActive} setActive={setItemModalActive} item={selectedItem}/>
+
+            <ItemList 
+            setItemModalActive={setItemModalActive} 
+            setSelectedItem={setSelectedItem} 
+            />
+
+            <BasketButton 
+            active={menuActive} 
+            setActive={setMenuActive}
+            />
+
+            <Basket 
+            active={menuActive} 
+            setActive={setMenuActive}
+            basket={basket}
+            setOrderModalActive={setOrderModalActive}
+            />
+
+            <ItemModal 
+            active={itemModalActive} 
+            setActive={setItemModalActive} 
+            item={selectedItem}/>
+
+            <OrderModal 
+            active={orderModalActive} 
+            setActive={setOrderModalActive}
+            basket={basket}
+            />
         </Container>
     )
 }

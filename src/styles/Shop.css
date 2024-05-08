@@ -225,6 +225,11 @@
   }  
 }
 
+.no-homo {
+  font-size: 18px;
+  margin-top: 25%;
+  margin-left: 35%
+}
 
 /* 
     Basket styles end
@@ -431,3 +436,39 @@
 }
 
 /* Item modal style end */
+
+/* Order modal style start */
+
+.orderModal__content {
+  margin-top: 40px;
+  box-shadow: 0 0 10px rgba( 0, 0, 0, .2 );
+  border-radius: 12px;
+  background-color: white;
+  width: 35%;
+  height: fit-content;
+  transform: scale(0.3);
+  transition: 0.4s all;
+  display: flex;
+  padding: 20px;
+  font-size: 18px;
+}
+
+.orderModal__content.active{
+  transform: scale(1);
+}
+
+.order-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.order-close-button {
+  border: none; /* Удаляем границу */
+  width: 30px; /* Ширина кнопки */
+  height: 30px; /* Высота кнопки */
+  background-image: url('../img/png/icons/x.png');
+  background-size: cover;
+  background-color: white;
+}
+
+/* Order modal style end */

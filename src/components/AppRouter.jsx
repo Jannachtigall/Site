@@ -1,11 +1,27 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import {Routes, Route, Navigate} from 'react-router-dom'
 import { authRoutes, publicRoutes } from '../routes'
 import { MAIN_ROUTE } from '../utils/consts'
 import { Context } from '../index'
+import { api } from '../api/api'
 
 const AppRouter = () => {
     const {user} = useContext(Context)
+    const {item} = useContext(Context)
+
+    useEffect(() => {
+        api.getProducts()
+            .then(({ items }) => {
+                const itemsWithCount = items.map(item => ({ ...item, count: 1 }));
+                item.setItems(itemsWithCount);
+            })
+            .catch(err => console.log(err));
+        api.getType()
+            .then(({types}) => {
+                item.setTypes(types)
+            })
+            .catch(err => console.log(err))
+    }, [])
 
     return (
         <Routes>

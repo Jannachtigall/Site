@@ -8,9 +8,10 @@ export const ItemList = ({setItemModalActive, setSelectedItem}) => {
 
     return (
         <Row className='mb-4'>
-            {item.items.map( item =>
+            {item.items.map( (item, index) =>
                 <Item 
                 item={item}
+                key={index}
                 setItemModalActive={setItemModalActive}
                 setSelectedItem={setSelectedItem}
                 /> 

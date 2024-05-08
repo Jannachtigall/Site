@@ -1,9 +1,16 @@
 import React from 'react'
 import "../styles/Shop.css"
 import {Col} from 'react-bootstrap'
+import { useContext } from 'react'
+import { Context } from '..'
+
 
 export const Item = ({item, setItemModalActive, setSelectedItem}) => {
-    const handleClick = () => {
+    const {basket} = useContext(Context)
+    const handleClick = (e) => {
+        if(e.target.classList.contains('pocket-button') || e.target.tagName === 'IMG') {
+            return
+        }
         setSelectedItem(item); // Передача объекта item
         setItemModalActive(true); // Установка активности модального окна
     };
@@ -18,7 +25,7 @@ export const Item = ({item, setItemModalActive, setSelectedItem}) => {
                         <p className='item-text'>{item.cost} рублей</p>
                     </div>
                     <div className='button-block'>
-                        <button className='pocket-button'>
+                        <button className='pocket-button' onClick={() => basket.addItem(item)}>
                             <img style={{width: 24, height: 24}} 
                             src={require('../img/png/shopping-bag.png')} alt=''/>
                         </button>
